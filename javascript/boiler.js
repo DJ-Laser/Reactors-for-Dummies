@@ -6,5 +6,8 @@ Defines a class to get information about a thermoelectric boiler
 import BasicMultiblock from "./basicMultiblock.js"
 
 export default class Boiler extends BasicMultiblock {
+    superheraters = 1;
+    disperserlevel = 2;
+
     
 }
