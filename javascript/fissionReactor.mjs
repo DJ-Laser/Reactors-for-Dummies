@@ -9,20 +9,8 @@ import BasicMultiblock from "./basicMultiblock.mjs"
 export default class FissionReactor extends BasicMultiblock {
     coolant = coolants.water;
 
-    validateLength(l) {
-        return l <= 18 && l >= 3;
-    }
-    
-    validateWidth(w) {
-        return w <= 18 && w >= 3;
-    }
-    
-    validateHeight(h) {
-        return h <= 18 && h >= 4;
-    }
-
     setCoolant(c) {
-        let cools = Object.values(coolants)
+        let cools = Object.values(coolants);
 
         if (cools.includes(c)) {
             this.coolant = c;
@@ -31,7 +19,7 @@ export default class FissionReactor extends BasicMultiblock {
             return false;
         }
     }
-    
+
     getMaxControlRods() {
         return Math.ceil(this.getInnerLength() * this.getInnerWidth() / 2);
     }

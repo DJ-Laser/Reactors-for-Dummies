@@ -7,33 +7,33 @@ export default class BasicMultiblock {
     length = 3;
     width = 3;
     height = 4;
-    
+
     validateLength(l) {
-        return true;
+        return l <= 18 && l >= 3;
     }
-    
+
     validateWidth(w) {
-        return true;
+        return w <= 18 && w >= 3;
     }
-    
+
     validateHeight(h) {
-        return true;
+        return h <= 18 && h >= 4;
     }
-    
-    validateDimensions(l, h, w) {
+
+    validateDimensions(l, w, h) {
         return (
             this.validateLength(l) &&
             this.validateWidth(w) &&
             this.validateHeight(h)
-            )
+        )
     }
-    
+
     setDimensions(l, h, w) {
         let valid = this.validateDimensions(l, w, h);
-        if (valid){
-            this.length = l;
-            this.width = w;
-            this.height = h;
+        if (valid) {
+            this.setLength(l);
+            this.setWidth(w);
+            this.setHeight(h);
         }
         return valid;
     }
@@ -43,7 +43,7 @@ export default class BasicMultiblock {
         if (valid) {
             this.length = l;
         }
-        return valid ;
+        return valid;
     }
 
     setWidth(w) {
@@ -61,7 +61,7 @@ export default class BasicMultiblock {
         }
         return valid;
     }
-    
+
     getInnerLength() {
         return this.length - 2;
     }
@@ -77,7 +77,7 @@ export default class BasicMultiblock {
     getInnerArea() {
         return this.getInnerLength() * this.getInnerWidth() * this.getInnerHeight();
     }
-   
+
     getEdgeBlockAmount() {
         return (this.length * 4) + (this.getInnerWidth() * 4) + (this.getInnerHeight() * 4);
     }

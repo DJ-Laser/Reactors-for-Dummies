@@ -1,8 +1,7 @@
 import FissionReactor from "./fissionReactor.mjs";
 import coolants from "./coolants.mjs";
+import Boiler from "./boiler.mjs";
 
-let r1 = new FissionReactor();
-console.log(r1.setCoolant(coolants.sodium));
-console.log(r1.coolant);
+let b1 = new Boiler();
 
-console.log("")
+console.log("");
