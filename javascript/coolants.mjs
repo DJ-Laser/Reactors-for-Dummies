@@ -26,7 +26,7 @@ const coolants = {
     sodium: new Coolant("sodium", "superheated sodium")
 }
 
-Object.freeze(Coolants)
-Object.preventExtensions(Coolants)
+Object.freeze(coolants)
+Object.preventExtensions(coolants)
 
-export default Coolants;
+export default coolants;

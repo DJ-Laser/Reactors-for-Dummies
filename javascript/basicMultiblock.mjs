@@ -20,11 +20,15 @@ export default class BasicMultiblock {
         return true;
     }
     
-    validateDimensions(l, w, h) {
-        return true;
+    validateDimensions(l, h, w) {
+        return (
+            this.validateLength(l) &&
+            this.validateWidth(w) &&
+            this.validateHeight(h)
+            )
     }
     
-    setDimensions(l, w, h) {
+    setDimensions(l, h, w) {
         let valid = this.validateDimensions(l, w, h);
         if (valid){
             this.length = l;

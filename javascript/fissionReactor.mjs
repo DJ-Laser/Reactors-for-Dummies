@@ -3,14 +3,26 @@ Made by DJ_Laser
 Defines a class to get information about a fission reactor
 */
 
-import coolants from "./coolants.js";
-import BasicMultiblock from "./basicMultiblock.js"
+import coolants from "./coolants.mjs";
+import BasicMultiblock from "./basicMultiblock.mjs"
 
-export default class Reactor extends BasicMultiblock {
+export default class FissionReactor extends BasicMultiblock {
     coolant = coolants.water;
 
+    validateLength(l) {
+        return l <= 18 && l >= 3;
+    }
+    
+    validateWidth(w) {
+        return w <= 18 && w >= 3;
+    }
+    
+    validateHeight(h) {
+        return h <= 18 && h >= 4;
+    }
+
     setCoolant(c) {
-        let cools = Object.keys(coolants);
+        let cools = Object.values(coolants)
 
         if (cools.includes(c)) {
             this.coolant = c;
@@ -40,5 +52,3 @@ export default class Reactor extends BasicMultiblock {
         }
     }
 }
-
-let r1 = new Reactor();
